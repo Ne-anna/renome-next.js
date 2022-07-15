@@ -1,5 +1,5 @@
 import style from "../styles/about.module.scss";
-import { AboutData } from "../data";
+import { AboutData } from "../../../data";
 
 export default function About(props: AboutData) {
   return (

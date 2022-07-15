@@ -1,7 +1,7 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { getSortedPostsData } from "../lib/fetchFunction";
-import About from "./about";
+import About from "./organisms/about/about";
 
 interface allDataProps {
   allData: any;
