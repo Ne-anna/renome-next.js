@@ -3,9 +3,10 @@ import Head from "next/head";
 import { getSortedPostsData } from "../lib/fetchFunction";
 import About from "./organisms/about/about";
 import Layout from "../pages/layout";
+import { RootObject } from "../data";
 
 interface allDataProps {
-  allData: any;
+  allData: RootObject;
 }
 
 export const getStaticProps: GetStaticProps = async () => {
