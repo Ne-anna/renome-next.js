@@ -1,0 +1,29 @@
+$brown: #985e5b;
+$white: #ffffff;
+$coalblack: #1e2633;
+$grey: #404040;
+$lightgrey: #d0d0d0;
+$darkergrey: #f7f7f7;
+$footerbackground: #edeff2;
+$black: #000000;
+$pacifico: "Pacifico";
+$axis: "Axis";
+$montserrat: "Montserrat";
+
+@font-face {
+  font-family: "Axis";
+  font-style: normal;
+  font-weight: 400;
+  src: url("../public/fonts/Axis.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-weight: 700;
+  src: url("../public/fonts/Montserrat-Bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Pacifico";
+  src: url("../public/fonts/Pacifico-Regular.ttf") format("truetype");
+}
