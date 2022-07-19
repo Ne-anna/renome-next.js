@@ -4,6 +4,7 @@ import { getSortedPostsData } from "../lib/fetchFunction";
 import About from "./organisms/about/about";
 import Layout from "../pages/layout";
 import { RootObject } from "../data";
+import Gallery from "./organisms/gallery/gallery";
 
 interface allDataProps {
   allData: RootObject;
@@ -32,6 +33,11 @@ export default function RenomeApp({ allData }: allDataProps) {
             title={allData.about.title}
             subTitle={allData.about.subTitle}
             text={allData.about.text}
+          />
+          <Gallery
+            title={allData.gallery.title}
+            subTitle={allData.gallery.subTitle}
+            galleryImages={allData.gallery.galleryImages}
           />
         </main>
       </Layout>
