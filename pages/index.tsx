@@ -23,12 +23,6 @@ export const getStaticProps: GetStaticProps = async () => {
 export default function RenomeApp({ allData }: allDataProps) {
   return (
     <>
-      <style>{`
-        body {
-          margin: 0px;
-          padding: 0px;
-        }
-      `}</style>
       <Head>
         <title>Renome next.js</title>
       </Head>
