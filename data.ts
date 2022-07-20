@@ -96,7 +96,7 @@ export interface GalleryData {
   galleryImages: GalleryImage[];
 }
 
-export interface FooterIcon {
+export interface FooterIcons {
   id: number;
   icon: string;
   altTag: string;
@@ -104,7 +104,7 @@ export interface FooterIcon {
 
 export interface FooterData {
   title: string;
-  footerIcons: FooterIcon[];
+  footerIcons: FooterIcons[];
   logo: string;
   copyright: string;
 }
