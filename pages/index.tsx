@@ -26,7 +26,26 @@ export default function RenomeApp({ allData }: allDataProps) {
       <Head>
         <title>Renome next.js</title>
       </Head>
-      <Layout footerDataProps={allData.footer}>
+      <Layout
+        navigationData={{
+          logo: allData.navigation.logo,
+          cartPath: allData.navigation.cartPath,
+          altTagCart: allData.navigation.altTagCart,
+          count: allData.navigation.count,
+          dividerPath: allData.navigation.dividerPath,
+          altTagDivider: allData.navigation.altTagDivider,
+        }}
+        cartData={{
+          cart: allData.cart,
+        }}
+        menuData={{
+          menu: allData.menu,
+        }}
+        backButtonData={{
+          buttonData: allData.backButtonTitle,
+        }}
+        footerDataProps={allData.footer}
+      >
         <main>
           <About
             images={allData.about.images}
