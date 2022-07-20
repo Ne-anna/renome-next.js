@@ -26,7 +26,7 @@ export default function RenomeApp({ allData }: allDataProps) {
       <Head>
         <title>Renome next.js</title>
       </Head>
-      <Layout>
+      <Layout footerDataProps={allData.footer}>
         <main>
           <About
             images={allData.about.images}
