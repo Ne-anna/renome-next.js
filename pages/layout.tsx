@@ -1,7 +1,18 @@
 import Footer from "./organisms/footer/footer";
-import { FooterData } from "../data";
+import {
+  backButtonData,
+  Cart,
+  FooterData,
+  MenuData,
+  NavigationData,
+} from "../data";
+import Navigation from "./organisms/navigation/navigation";
 
 interface FooterDataProps {
+  navigationData: NavigationData;
+  cartData: Cart;
+  menuData: MenuData;
+  backButtonData: backButtonData;
   footerDataProps: FooterData;
   children: React.ReactNode;
 }
@@ -9,7 +20,14 @@ interface FooterDataProps {
 export default function Layout(props: FooterDataProps) {
   return (
     <div>
-      <p>Navigation coming soon</p>
+      <Navigation
+        logo={props.navigationData.logo}
+        cartPath={props.navigationData.cartPath}
+        altTagCart={props.navigationData.altTagCart}
+        count={props.navigationData.count}
+        dividerPath={props.navigationData.dividerPath}
+        altTagDivider={props.navigationData.altTagDivider}
+      />
       {props.children}
       <Footer
         title={props.footerDataProps.title}
