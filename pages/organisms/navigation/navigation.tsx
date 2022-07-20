@@ -1,6 +1,7 @@
 import { NavigationData } from "../../../data";
 import style from "../navigation/navigation.module.scss";
 import Image from "next/image";
+import Hamburger from "../../atoms/hamburger-button/hamburger";
 import { useState } from "react";
 
 export default function Navigation(props: NavigationData) {
@@ -30,6 +31,16 @@ export default function Navigation(props: NavigationData) {
             width={20}
             height={25}
           />
+        </div>
+        <div
+          className={
+            isMainMenuOpen
+              ? style.navigationHamburgerActive
+              : style.navigationHamburger
+          }
+          onClick={toggleMenu}
+        >
+          <Hamburger />
         </div>
       </div>
     </div>
