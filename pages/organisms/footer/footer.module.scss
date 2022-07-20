@@ -1,0 +1,48 @@
+@import "../../../styles//globals.scss";
+
+.footer {
+  text-align: center;
+  background-color: $footerbackground;
+  padding-bottom: 30px;
+
+  &Title {
+    font-family: $montserrat;
+    font-size: 12px;
+    line-height: 25px;
+    text-transform: uppercase;
+    color: $coalblack;
+    margin-top: 0;
+    padding-top: 30px;
+    margin-bottom: 10px;
+  }
+
+  &Logo {
+    font-family: $pacifico;
+    font-weight: normal;
+    margin-bottom: 20px;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: $coalblack;
+  }
+
+  &Copyright {
+    font-family: $axis;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color: $coalblack;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &SocialMedia {
+    display: flex;
+    justify-content: center;
+  }
+
+  &Icon {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100px;
+  }
+}
