@@ -23,6 +23,7 @@ export default function Layout(props: LayoutDataProps) {
       <Navigation
         navigationData={props.navigationData}
         cartData={props.cartData}
+        menuData={props.menuData}
       />
       {props.children}
       <Footer
