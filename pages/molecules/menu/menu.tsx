@@ -1,6 +1,7 @@
 import { MenuData } from "../../../data";
 import style from "../menu/menu.module.scss";
 import Search from "../../atoms/search-button/search-button";
+import FeaturesNext from "../../atoms/features-next-button/features-next";
 
 interface MenuProps {
   menuData: MenuData;
@@ -39,10 +40,10 @@ export default function Menu(props: MenuProps) {
                     {post.title}
                   </a>
                   <div>
-                    {/* <FeaturesNext
+                    <FeaturesNext
                       buttonNextPath={post.buttonNextPath}
                       buttonNextAltTag={post.buttonNextAltTag}
-                    /> */}
+                    />
                   </div>
                 </div>
               ) : (
