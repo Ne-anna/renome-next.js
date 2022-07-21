@@ -1,0 +1,79 @@
+@import "../../../styles/variables.scss";
+
+.nav {
+  padding: 0 9px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 20;
+  position: fixed;
+  background-color: $white;
+  width: 100%;
+}
+
+.navigationLeft {
+  font-family: $pacifico;
+  font-size: 25px;
+  font-weight: normal;
+  letter-spacing: 3px;
+  color: $black;
+  margin: 0;
+  padding: 0;
+}
+
+.navigationRight {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.navigationCart {
+  width: 18px;
+}
+
+.navigationCount {
+  padding-top: 3px;
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.navigationDivide {
+  height: 25px;
+}
+
+.navigationHamburger {
+  display: block;
+  padding-right: 15px;
+  cursor: pointer;
+
+  &Active {
+    display: block;
+    padding-right: 15px;
+    cursor: pointer;
+  }
+
+  &Bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    border-radius: 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: $black;
+  }
+}
+
+.navigationHamburgerActive .navigationHamburgerBar {
+  &:nth-child(2) {
+    opacity: 0;
+  }
+
+  &:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  &:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+}
