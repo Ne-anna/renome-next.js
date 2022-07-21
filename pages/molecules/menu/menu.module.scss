@@ -1,0 +1,73 @@
+@import "../../../styles//variables.scss";
+
+.menu {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  margin-bottom: 0;
+  right: 0;
+  gap: 0;
+  flex-direction: column;
+  background-color: $white;
+  transition: 0.3s ease;
+  top: 50px;
+  overflow-y: auto;
+}
+
+@media screen and (min-width: 450px) and (max-height: 500px) {
+  .scroll {
+    height: calc(100vh - 50px);
+  }
+}
+
+.item {
+  width: 100%;
+  border-top: solid 1px $lightgrey;
+  display: flex;
+  list-style: none;
+  overflow-y: auto;
+
+  &:hover {
+    color: $brown;
+  }
+
+  &Search {
+    border-top: none;
+    align-items: center;
+    margin-bottom: 14px;
+    margin-top: 18px;
+  }
+
+  &Features {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.link {
+  text-transform: uppercase;
+  font-family: $montserrat;
+  font-size: 12px;
+  color: var(--black);
+  text-decoration: none;
+  transition: 0.7s ease;
+  letter-spacing: 2px;
+  padding: 18px 0;
+  padding-left: 10px;
+}
+
+.input {
+  border: transparent;
+  height: 38px;
+  padding-left: 10px;
+  flex: 1;
+
+  &::placeholder {
+    color: $lightgrey;
+    letter-spacing: 2px;
+    font-family: $montserrat;
+    font-size: 12px;
+  }
+}
