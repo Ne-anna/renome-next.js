@@ -1,11 +1,24 @@
-import { NavigationData } from "../../../data";
+import { Cart, NavigationData } from "../../../data";
 import style from "../navigation/navigation.module.scss";
 import Image from "next/image";
 import Hamburger from "../../atoms/hamburger-button/hamburger";
+import CartDropDown from "../../molecules/cart-drop-down/cart-drop-down";
 import { useState } from "react";
 
-export default function Navigation(props: NavigationData) {
+interface NavigationDataProps {
+  navigationData: NavigationData;
+  cartData: Cart;
+}
+
+export default function Navigation(props: NavigationDataProps) {
+  const [isCartOpen, setCartOpen] = useState<boolean>(false);
   const [isMainMenuOpen, setMainMenuOpen] = useState<boolean>(false);
+
+  const toggleCart = () => {
+    console.log("clicked on cart");
+    setMainMenuOpen(false);
+    setCartOpen(!isCartOpen);
+  };
 
   const toggleMenu = () => {
     setMainMenuOpen(!isMainMenuOpen);
@@ -13,21 +26,21 @@ export default function Navigation(props: NavigationData) {
 
   return (
     <div className={style.nav}>
-      <h2 className={style.navigationLeft}>{props.logo}</h2>
+      <h2 className={style.navigationLeft}>{props.navigationData.logo}</h2>
       <div className={style.navigationRight}>
-        <div className={style.navigationCart}>
+        <div className={style.navigationCart} onClick={toggleCart}>
           <Image
-            src={props.cartPath}
-            alt={props.altTagCart}
+            src={props.navigationData.cartPath}
+            alt={props.navigationData.altTagCart}
             width={18}
             height={25}
           />
         </div>
-        <p className={style.navigationCount}>{props.count}</p>
+        <p className={style.navigationCount}>{props.navigationData.count}</p>
         <div className={style.navigationDivide}>
           <Image
-            src={props.dividerPath}
-            alt={props.altTagDivider}
+            src={props.navigationData.dividerPath}
+            alt={props.navigationData.altTagDivider}
             width={25}
             height={25}
           />
@@ -42,6 +55,7 @@ export default function Navigation(props: NavigationData) {
         >
           <Hamburger />
         </div>
+        {isCartOpen && <CartDropDown cart={props.cartData.cart} />}
       </div>
     </div>
   );
