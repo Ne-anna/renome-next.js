@@ -23,7 +23,7 @@ export interface MenuData {
 
 export interface MenuItem {
   title?: string;
-  buttonSearchPath: string;
+  buttonSearchPath?: string;
   searchAltTag?: string;
   url?: string;
   buttonNextPath?: string;
