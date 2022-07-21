@@ -28,7 +28,7 @@ export default function Navigation(props: NavigationData) {
           <Image
             src={props.dividerPath}
             alt={props.altTagDivider}
-            width={20}
+            width={25}
             height={25}
           />
         </div>
