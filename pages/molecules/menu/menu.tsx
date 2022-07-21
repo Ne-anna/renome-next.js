@@ -1,6 +1,6 @@
 import { MenuData } from "../../../data";
 import style from "../menu/menu.module.scss";
-import Search from "../search-button/search-button";
+import Search from "../../atoms/search-button/search-button";
 
 interface MenuProps {
   menuData: MenuData;
