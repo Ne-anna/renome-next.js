@@ -82,7 +82,7 @@ export default function Navigation(props: NavigationDataProps) {
         </div>
         <div
           className={
-            isMainMenuOpen
+            isMainMenuOpen || isSubMenuOpen
               ? style.navigationHamburgerActive
               : style.navigationHamburger
           }
