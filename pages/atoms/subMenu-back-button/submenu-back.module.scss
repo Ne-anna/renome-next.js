@@ -1,0 +1,13 @@
+@import "../../../styles/variables.scss";
+
+.subNavigationButton {
+  background-color: transparent;
+  border: solid 1px $lightgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin: 8px;
+}
