@@ -1,15 +1,17 @@
-import { Cart, MenuData, NavigationData } from "../../../data";
+import { backButtonData, Cart, MenuData, NavigationData } from "../../../data";
 import style from "../navigation/navigation.module.scss";
 import Image from "next/image";
 import Hamburger from "../../atoms/hamburger-button/hamburger";
 import CartDropDown from "../../molecules/cart-drop-down/cart-drop-down";
 import { useEffect, useRef, useState } from "react";
 import Menu from "../../molecules/menu/menu";
+import SubMenu from "../../molecules/sub-menu/sub-menu";
 
 interface NavigationDataProps {
   navigationData: NavigationData;
   cartData: Cart;
   menuData: MenuData;
+  backButtonData: backButtonData;
 }
 
 export default function Navigation(props: NavigationDataProps) {
@@ -32,6 +34,16 @@ export default function Navigation(props: NavigationDataProps) {
       setMainMenuOpen(false);
       setSubMenuOpen(false);
     }
+  };
+
+  const openSubMenu = () => {
+    setSubMenuOpen(true);
+    setMainMenuOpen(false);
+  };
+
+  const closeSubMenu = () => {
+    setSubMenuOpen(false);
+    setMainMenuOpen(true);
   };
 
   useEffect(() => {
@@ -79,7 +91,24 @@ export default function Navigation(props: NavigationDataProps) {
           <Hamburger />
         </div>
         {isCartOpen && <CartDropDown cart={props.cartData.cart} />}
-        {isMainMenuOpen && <Menu menuData={props.menuData} />}
+        {isMainMenuOpen && (
+          <Menu menu={props.menuData.menu} openSubMenu={openSubMenu} />
+        )}
+        {isSubMenuOpen && (
+          <SubMenu
+            menuData={{
+              menu: props.menuData.menu,
+              closeSubMenu: closeSubMenu,
+              openSubMenu: openSubMenu,
+            }}
+            backButton={{
+              buttonBackAltTag:
+                props.backButtonData.buttonData.buttonBackAltTag,
+              buttonBackPath: props.backButtonData.buttonData.buttonBackPath,
+              title: props.backButtonData.buttonData.title,
+            }}
+          />
+        )}
       </div>
     </div>
   );
