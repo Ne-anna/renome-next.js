@@ -24,6 +24,7 @@ export default function Layout(props: LayoutDataProps) {
         navigationData={props.navigationData}
         cartData={props.cartData}
         menuData={props.menuData}
+        backButtonData={props.backButtonData}
       />
       {props.children}
       <Footer
