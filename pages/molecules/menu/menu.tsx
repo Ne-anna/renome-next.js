@@ -3,15 +3,11 @@ import style from "../menu/menu.module.scss";
 import Search from "../../atoms/search-button/search-button";
 import FeaturesNext from "../../atoms/features-next-button/features-next";
 
-interface MenuProps {
-  menuData: MenuData;
-}
-
-export default function Menu(props: MenuProps) {
+export default function Menu(props: MenuData) {
   return (
     <div className={style.menu}>
       <div className={style.scroll}>
-        {props.menuData.menu.map((post, index) => {
+        {props.menu.map((post, index) => {
           return (
             <li
               key={index}
@@ -32,10 +28,7 @@ export default function Menu(props: MenuProps) {
                   />
                 </>
               ) : post.title === "Features" ? (
-                <div
-                  className={style.itemFeatures}
-                  // onClick={props.openSubMenu}
-                >
+                <div className={style.itemFeatures} onClick={props.openSubMenu}>
                   <a className={style.link} href={post.url}>
                     {post.title}
                   </a>
