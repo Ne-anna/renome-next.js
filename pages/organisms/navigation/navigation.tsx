@@ -31,18 +31,10 @@ export default function Navigation(props: NavigationDataProps) {
   const toggleMenu = () => {
     setMainMenuOpen(!isMainMenuOpen);
     setCartOpen(false);
-    // if (isSubMenuOpen) {
-    //   setMainMenuOpen(false);
-    //   setSubMenuOpen(false);
-    // }
-    if (isMainMenuOpen) {
-      document.body.style.overflow === "hidden";
-      console.log("should be open menu");
-    } else {
-      document.body.style.overflow = "unset";
-      console.log("closed");
+    if (isSubMenuOpen) {
+      setMainMenuOpen(false);
+      setSubMenuOpen(false);
     }
-    // console.log(isMainMenuOpen);
   };
 
   const openSubMenu = () => {
@@ -68,38 +60,13 @@ export default function Navigation(props: NavigationDataProps) {
     document.body.addEventListener("mousedown", closeWithOutsideClick);
   }, [Ref]);
 
-  // if (typeof window !== "undefined") {
-  //   if (isCartOpen || isMainMenuOpen || isSubMenuOpen) {
-  //     document.body.style.overflow === "hidden";
-  //   } else {
-  //     document.body.style.overflow = "unset";
-  //   }
-  // }
-
-  const StopScroll = () => {
+  if (typeof window !== "undefined") {
     if (isCartOpen || isMainMenuOpen || isSubMenuOpen) {
-      document.body.style.overflow === "hidden";
+      document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-  };
-
-  // var stopScroll = () => {
-  //   if (isCartOpen || isMainMenuOpen || isSubMenuOpen) {
-  //     document.body.style.overflow === "hidden";
-  //   } else {
-  //     document.body.style.overflow = "unset";
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   if (isCartOpen || isMainMenuOpen || isSubMenuOpen) {
-  //     document.body.style.overflow === "hidden";
-  //   } else {
-  //     document.body.style.overflow = "unset";
-  //   }
-  // }, []);
-  // stopScroll();
+  }
 
   return (
     <div className={style.nav}>
