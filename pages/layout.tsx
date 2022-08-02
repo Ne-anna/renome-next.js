@@ -8,7 +8,7 @@ import {
 } from "../data";
 import Navigation from "./organisms/navigation/navigation";
 
-interface FooterDataProps {
+interface LayoutDataProps {
   navigationData: NavigationData;
   cartData: Cart;
   menuData: MenuData;
@@ -17,16 +17,14 @@ interface FooterDataProps {
   children: React.ReactNode;
 }
 
-export default function Layout(props: FooterDataProps) {
+export default function Layout(props: LayoutDataProps) {
   return (
     <div>
       <Navigation
-        logo={props.navigationData.logo}
-        cartPath={props.navigationData.cartPath}
-        altTagCart={props.navigationData.altTagCart}
-        count={props.navigationData.count}
-        dividerPath={props.navigationData.dividerPath}
-        altTagDivider={props.navigationData.altTagDivider}
+        navigationData={props.navigationData}
+        cartData={props.cartData}
+        menuData={props.menuData}
+        backButtonData={props.backButtonData}
       />
       {props.children}
       <Footer

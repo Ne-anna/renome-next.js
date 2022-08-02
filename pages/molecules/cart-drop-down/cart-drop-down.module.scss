@@ -1,0 +1,33 @@
+@import "../../../styles/variables.scss";
+
+.cart {
+  position: absolute;
+  display: flex;
+  width: 30%;
+  flex-direction: column;
+  list-style-type: none;
+  background-color: $white;
+  transition: 0.7s ease;
+  padding: 0;
+  margin: 0;
+  right: 65px;
+  top: 80%;
+
+  &Item {
+    width: 100%;
+
+    &:hover {
+      color: $brown;
+    }
+  }
+
+  &Text {
+    font-family: $montserrat;
+    text-align: center;
+    justify-content: center;
+    margin: 0;
+    padding: 18px 10px;
+    letter-spacing: 1px;
+    font-weight: bolder;
+  }
+}
