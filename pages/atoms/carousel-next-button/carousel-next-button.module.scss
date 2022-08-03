@@ -1,0 +1,11 @@
+@import "../../../styles//variables.scss";
+
+.CarouselButton {
+  background-color: transparent;
+  justify-items: center;
+  align-items: center;
+  margin-top: 50px;
+  width: 60px;
+  height: 60px;
+  border: 2px solid $white;
+}
