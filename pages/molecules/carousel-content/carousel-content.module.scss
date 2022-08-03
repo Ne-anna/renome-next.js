@@ -1,0 +1,116 @@
+@import "../../../styles/variables.scss";
+
+@mixin text {
+  position: absolute;
+  bottom: 140px;
+}
+
+@keyframes fadeVisibilityRight {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+  }
+}
+
+@keyframes fadeVisibilityLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+  }
+}
+
+@keyframes slideToRight {
+  0% {
+    left: 0%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes slideToLeft {
+  0% {
+    right: 0%;
+  }
+  100% {
+    right: -100%;
+  }
+}
+
+.container {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.animationBlocked {
+  z-index: 2;
+  animation: unset;
+}
+
+.animationActive {
+  display: none;
+}
+
+.item {
+  position: absolute;
+  width: 100%;
+  opacity: 1;
+}
+
+.item-right {
+  animation: slideToRight 0.5s;
+  display: block;
+  left: -100%;
+}
+
+.item-left {
+  animation: slideToLeft 0.5s;
+  display: block;
+  right: -100%;
+}
+
+.active-right {
+  opacity: 1;
+  display: block;
+  z-index: 1;
+  animation: fadeVisibilityRight 0.5s;
+}
+
+.active-left {
+  opacity: 1;
+  display: block;
+  z-index: 1;
+  animation: fadeVisibilityLeft 0.5s;
+}
+
+.text {
+  @include text;
+  z-index: 40;
+}
+
+.text-right {
+  animation: fadeVisibilityRight 1s;
+}
+
+.text-left {
+  animation: fadeVisibilityLeft 1s;
+}
+
+.title {
+  font-family: $axis;
+  color: $white;
+  margin: 0;
+  margin-left: 22px;
+  font-size: 28px;
+  letter-spacing: 3px;
+}
+.subtitle {
+  font-family: $montserrat;
+  color: $brown;
+  margin-top: 10px;
+  margin-left: 22px;
+  font-size: 22px;
+  letter-spacing: 2px;
+}
