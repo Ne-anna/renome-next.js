@@ -1,0 +1,16 @@
+.grid {
+  padding: 55px 0;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+}
+
+.backImage {
+  grid-area: 1 / 2 / 5 / 11;
+  width: 100%;
+}
+
+.frontImage {
+  grid-area: 4 / 1 / 8 / 10;
+  width: 100%;
+}
