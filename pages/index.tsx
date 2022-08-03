@@ -60,12 +60,7 @@ export default function RenomeApp({ allData }: allDataProps) {
               altTagPrevious: allData.carouselButtons.altTagPrevious,
             }}
           />
-          <About
-            images={allData.about.images}
-            title={allData.about.title}
-            subTitle={allData.about.subTitle}
-            text={allData.about.text}
-          />
+          <About imageData={allData.about.images} textData={allData.about} />
           <Gallery
             title={allData.gallery.title}
             subTitle={allData.gallery.subTitle}
