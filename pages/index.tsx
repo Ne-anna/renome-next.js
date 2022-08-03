@@ -5,6 +5,7 @@ import About from "./organisms/about/about";
 import Layout from "../pages/layout";
 import { RootObject } from "../data";
 import Gallery from "./organisms/gallery/gallery";
+import Carousel from "./organisms/carousel/carousel";
 
 interface allDataProps {
   allData: RootObject;
@@ -47,6 +48,18 @@ export default function RenomeApp({ allData }: allDataProps) {
         footerDataProps={allData.footer}
       >
         <main>
+          <Carousel
+            carouselData={{
+              carousel: allData.carousel,
+            }}
+            carouselButtonData={{
+              carouselButtonNext: allData.carouselButtons.carouselButtonNext,
+              altTagNext: allData.carouselButtons.altTagNext,
+              carouselButtonPrevious:
+                allData.carouselButtons.carouselButtonPrevious,
+              altTagPrevious: allData.carouselButtons.altTagPrevious,
+            }}
+          />
           <About
             images={allData.about.images}
             title={allData.about.title}
