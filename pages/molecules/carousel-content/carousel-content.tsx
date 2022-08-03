@@ -33,6 +33,7 @@ export default function CarouselContent(props: CarouselData) {
             </div>
             <div>
               <Image
+                priority
                 src={post.path}
                 alt={post.altTag}
                 width={390}
