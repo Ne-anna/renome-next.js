@@ -4,7 +4,7 @@ import { CarouselButton } from "../../../data";
 
 export default function CarouselPreviousButton(props: CarouselButton) {
   return (
-    <button className={style.CarouselButton} onClick={props.loadPreviousSlide}>
+    <button className={style.carouselButton} onClick={props.loadPreviousSlide}>
       {props.carouselButtonPrevious && (
         <Image
           src={props.carouselButtonPrevious}

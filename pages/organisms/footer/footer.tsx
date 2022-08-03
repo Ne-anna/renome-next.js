@@ -23,7 +23,7 @@ export default function Footer(props: FooterData) {
       </div>
 
       <h2 className={style.footerLogo}>{props.logo}</h2>
-      <h5 className={props.copyright}>{props.copyright}</h5>
+      <h5 className={style.copyright}>{props.copyright}</h5>
     </div>
   );
 }
