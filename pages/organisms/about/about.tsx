@@ -9,12 +9,14 @@ interface AboutDataProps {
 export default function About(props: AboutDataProps) {
   return (
     <div className={style.aboutContainer}>
-      <Grid
-        altTagBack={props.imageData.altTagBack}
-        top={props.imageData.top}
-        bottom={props.imageData.bottom}
-        altTagFront={props.imageData.altTagFront}
-      />
+      <div data-testid="GridID">
+        <Grid
+          altTagBack={props.imageData.altTagBack}
+          top={props.imageData.top}
+          bottom={props.imageData.bottom}
+          altTagFront={props.imageData.altTagFront}
+        />
+      </div>
       <div className={style.about}>
         <h1 className={style.aboutTitle}>{props.textData.title}</h1>
         <h5 className={style.aboutSubTitle}>{props.textData.subTitle}</h5>
