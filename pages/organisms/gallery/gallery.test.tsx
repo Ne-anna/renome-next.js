@@ -4,7 +4,7 @@ import "@testing-library/jest-dom";
 import Gallery from "./gallery";
 
 const galleryImage: GalleryImageData = {
-  altTag: "someAltTag",
+  altTag: "this is altTag",
   path: "/img",
 };
 
