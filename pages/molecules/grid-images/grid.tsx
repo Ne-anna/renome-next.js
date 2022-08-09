@@ -5,7 +5,7 @@ import style from "../grid-images/grid.module.scss";
 export default function Grid(props: Images) {
   return (
     <div className={style.grid}>
-      <div className={style.backImage} data-testid="backImage">
+      <div className={style.backImage}>
         {props.top && (
           <Image
             src={props.top}
@@ -16,7 +16,7 @@ export default function Grid(props: Images) {
           />
         )}
       </div>
-      <div className={style.frontImage} data-testid="frontImage">
+      <div className={style.frontImage}>
         {props.bottom && (
           <Image
             src={props.bottom}
