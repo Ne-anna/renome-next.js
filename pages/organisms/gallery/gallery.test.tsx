@@ -1,9 +1,9 @@
 import { render, screen } from "@testing-library/react";
-import { GalleryData, GalleryImage } from "../../../data";
+import { GalleryData, GalleryImageData } from "../../../data";
 import "@testing-library/jest-dom";
 import Gallery from "./gallery";
 
-const galleryImage: GalleryImage = {
+const galleryImage: GalleryImageData = {
   altTag: "someAltTag",
   path: "/img",
 };
