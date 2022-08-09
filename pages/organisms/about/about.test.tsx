@@ -1,16 +1,16 @@
 import { cleanup, render, screen } from "@testing-library/react";
 import About from "./about";
+import { Images, AboutData } from "../../../data";
 import "@testing-library/jest-dom";
-import Grid from "../../molecules/grid-images/grid";
 
-const imageData = {
+const imageData: Images = {
   top: "",
   altTagBack: "white house from afar",
   bottom: "",
   altTagFront: "close-up second house floor window",
 };
 
-const textData = {
+const textData: AboutData = {
   images: imageData,
   title: "About",
   subTitle: "WE CREATE DELICOUS MEMORIES",

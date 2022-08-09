@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import Grid from "./grid";
+import { Images } from "../../../data";
 import "@testing-library/jest-dom";
 
-const imageData = {
+const imageData: Images = {
   top: "",
   altTagBack: "white house from afar",
   bottom: "",
