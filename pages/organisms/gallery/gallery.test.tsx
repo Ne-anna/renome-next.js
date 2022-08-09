@@ -4,8 +4,8 @@ import "@testing-library/jest-dom";
 import Gallery from "./gallery";
 
 const galleryImage: GalleryImage = {
-  altTag: "",
-  path: "",
+  altTag: "someAltTag",
+  path: "/img",
 };
 
 const galleryData: GalleryData = {
@@ -40,7 +40,7 @@ it("Let's see does gallery sub-title match", () => {
   expect(item).toHaveTextContent("MORE ABOUT US VIA PHOTOS");
 });
 
-it("Let's see does gallery images match", () => {
+it("Let's see does gallery images have alt tag text or image", () => {
   render(
     <Gallery
       title={galleryData.title}
@@ -48,15 +48,8 @@ it("Let's see does gallery images match", () => {
       galleryImages={galleryData.galleryImages}
     />
   );
-  const item = screen.getAllByText(galleryData.galleryImage);
-
-  //jest test array of objects
-  // expect(item).toEqual(
-  //   expect.arrayContaining([
-  //     expect.objectContaining({}),
-  //     expect.objectContaining({}),
-  //   ])
-  // );
-  expect(item).toBeInTheDocument();
-  // expect(item).toHaveTextContent("");
+  galleryData.galleryImages.forEach((galleryImage) => {
+    const imageByAltText = screen.getByAltText(galleryImage.altTag);
+    expect(imageByAltText).toBeInTheDocument();
+  });
 });
