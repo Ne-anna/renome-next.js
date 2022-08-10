@@ -1,5 +1,5 @@
 import { GalleryData } from "../../../data";
-import GalleryImages from "../../molecules/gallery-image/gallery-image";
+import GalleryImage from "../../molecules/gallery-image/gallery-image";
 import style from "../gallery/gallery.module.scss";
 
 export default function Gallery(props: GalleryData) {
@@ -8,11 +8,11 @@ export default function Gallery(props: GalleryData) {
       <h1 className={style.galleryTitle}>{props.title}</h1>
       <h5 className={style.gallerySubtitle}>{props.subTitle}</h5>
       <div className={style.galleryImageContainer}>
-        {props.galleryImages.map((items, index) => {
+        {props.galleryImages.map((image, index) => {
           return (
             <div className={style.galleryImageContainerImg} key={index}>
               <>
-                <GalleryImages path={items.path} altTag={items.altTag} />
+                <GalleryImage path={image.path} altTag={image.altTag} />
               </>
             </div>
           );

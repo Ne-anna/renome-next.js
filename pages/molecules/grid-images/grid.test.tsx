@@ -4,9 +4,9 @@ import { Images } from "../../../data";
 import "@testing-library/jest-dom";
 
 const imageData: Images = {
-  top: "",
+  top: "/test",
   altTagBack: "white house from afar",
-  bottom: "",
+  bottom: "/test",
   altTagFront: "close-up second house floor window",
 };
 
@@ -19,7 +19,7 @@ it("time to check Grid components back images", () => {
       altTagFront={imageData.altTagFront}
     />
   );
-  const backImage = screen.getByTestId("backImage");
+  const backImage = screen.getByAltText(imageData.altTagBack);
   expect(backImage).toBeInTheDocument();
 });
 
@@ -32,6 +32,6 @@ it("time to check Grid components front images", () => {
       altTagFront={imageData.altTagFront}
     />
   );
-  const frontImage = screen.getByTestId("frontImage");
+  const frontImage = screen.getByAltText(imageData.altTagFront);
   expect(frontImage).toBeInTheDocument();
 });
