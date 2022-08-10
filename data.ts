@@ -85,7 +85,7 @@ export interface AboutData {
   text: string;
 }
 
-export interface GalleryImageData {
+export interface GalleryImage {
   altTag: string;
   path: string;
 }
@@ -93,7 +93,7 @@ export interface GalleryImageData {
 export interface GalleryData {
   title: string;
   subTitle: string;
-  galleryImages: GalleryImageData[];
+  galleryImages: GalleryImage[];
 }
 
 export interface FooterIcons {

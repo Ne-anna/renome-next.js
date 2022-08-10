@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { GalleryData, GalleryImageData } from "../../../data";
+import { GalleryData, GalleryImage as GalleryImageData } from "../../../data";
 import "@testing-library/jest-dom";
 import Gallery from "./gallery";
 
