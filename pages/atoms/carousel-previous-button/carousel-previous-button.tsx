@@ -7,7 +7,7 @@ export default function CarouselPreviousButton(props: CarouselButton) {
     <button
       className={style.carouselButton}
       onClick={props.loadPreviousSlide}
-      data-testid="buttonPrevious"
+      aria-label="previous button"
     >
       {props.carouselButtonPrevious && (
         <Image
