@@ -4,7 +4,11 @@ import { CarouselButton } from "../../../data";
 
 export default function CarouselPreviousButton(props: CarouselButton) {
   return (
-    <button className={style.carouselButton} onClick={props.loadPreviousSlide}>
+    <button
+      className={style.carouselButton}
+      onClick={props.loadPreviousSlide}
+      aria-label="previous button"
+    >
       {props.carouselButtonPrevious && (
         <Image
           src={props.carouselButtonPrevious}
