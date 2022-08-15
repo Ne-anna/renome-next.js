@@ -75,7 +75,7 @@ it("Is 'previous' button clicked?", () => {
   expect(clickPrevious).toHaveBeenCalledTimes(1);
 });
 
-it("Is 'previous' button clicked?", () => {
+it("Is 'next' button clicked?", () => {
   const clickNext = jest.fn();
   const { getByRole } = render(
     <CarouselNextButton loadNextSlide={clickNext} />
