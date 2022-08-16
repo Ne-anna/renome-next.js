@@ -25,27 +25,33 @@ const carouselButtonData: CarouselButton = {
   altTagNext: "arrow left",
   carouselButtonPrevious: "/assets/icons/icon-name.svg",
   altTagPrevious: "arrow right",
-  // loadPreviousSlide(): void {},
-  // loadNextSlide(): void {},
 };
+
 const carouselProps: CarouselProps = {
   carouselData: carouselData,
   carouselButtonData: carouselButtonData,
 };
 
-it("Let's check carousel title, sub-title and image altTag", () => {
+it("Let's see if the function is called when 'next' button is pressed", () => {
   render(
     <Carousel
       carouselData={carouselProps.carouselData}
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
-  carouselData.carousel.forEach((carousel) => {
-    const title = screen.getByText(carousel.title);
-    const subTitle = screen.getByText(carousel.subTitle);
-    const imageAltTag = screen.getByAltText(carousel.altTag);
-    expect(subTitle).toBeInTheDocument();
-    expect(title).toBeInTheDocument();
-    expect(imageAltTag).toBeInTheDocument();
-  });
+
+  const button = screen.getByRole("button", { name: "next button" });
+  fireEvent.click(button);
+});
+
+it("Let's see if the function is called when 'previous' button is pressed", () => {
+  render(
+    <Carousel
+      carouselData={carouselProps.carouselData}
+      carouselButtonData={carouselProps.carouselButtonData}
+    />
+  );
+
+  const button = screen.getByRole("button", { name: "previous button" });
+  fireEvent.click(button);
 });
