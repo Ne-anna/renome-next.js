@@ -1,8 +1,7 @@
-import { fireEvent, getByRole, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { CarouselButton, CarouselData, CarouselItem } from "../../../data";
 import Carousel from "./carousel";
-import CarouselPreviousButton from "../../atoms/carousel-previous-button/carousel-previous-button";
 
 const carouselItem: CarouselItem = {
   title: "Made with love",
@@ -39,7 +38,6 @@ it("Let's see if the function is called when 'next' button is pressed", () => {
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
-
   const button = screen.getByRole("button", { name: "next button" });
   fireEvent.click(button);
 });
@@ -51,7 +49,6 @@ it("Let's see if the function is called when 'previous' button is pressed", () =
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
-
   const button = screen.getByRole("button", { name: "previous button" });
   fireEvent.click(button);
 });
