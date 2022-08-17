@@ -16,7 +16,7 @@ interface CarouselProps {
 }
 
 const carouselData: CarouselData = {
-  carousel: [carouselItem],
+  carousel: [carouselItem, carouselItem, carouselItem],
 };
 
 const carouselButtonData: CarouselButton = {
@@ -31,24 +31,56 @@ const carouselProps: CarouselProps = {
   carouselButtonData: carouselButtonData,
 };
 
-it("Let's see if the function is called when 'next' button is pressed", () => {
+it("Let's see if the function is called when 'next' button is pressed", async () => {
   render(
     <Carousel
       carouselData={carouselProps.carouselData}
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
+  const carouselItem = await screen.findByTestId("carousel-item-0");
+  const carouselItem1 = await screen.findByTestId("carousel-item-1");
+  const carouselItem2 = await screen.findByTestId("carousel-item-2");
+
   const button = screen.getByRole("button", { name: "next button" });
   fireEvent.click(button);
+
+  expect(carouselItem1).toHaveClass("item active-right");
+  expect(carouselItem).toHaveClass("item-right");
+
+  fireEvent.click(button);
+
+  expect(carouselItem2).toHaveClass("item active-right");
+  expect(carouselItem1).toHaveClass("item item-right");
+
+  fireEvent.click(button);
+
+  expect(carouselItem2).toHaveClass("item item-right");
 });
 
-it("Let's see if the function is called when 'previous' button is pressed", () => {
+it("Let's see if the function is called when 'previous' button is pressed", async () => {
   render(
     <Carousel
       carouselData={carouselProps.carouselData}
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
+  const carouselItem = await screen.findByTestId("carousel-item-0");
+  const carouselItem1 = await screen.findByTestId("carousel-item-1");
+  const carouselItem2 = await screen.findByTestId("carousel-item-2");
+
   const button = screen.getByRole("button", { name: "previous button" });
   fireEvent.click(button);
+
+  expect(carouselItem1).toHaveClass("item animationActive");
+  expect(carouselItem).toHaveClass("item item-left");
+
+  fireEvent.click(button);
+
+  expect(carouselItem1).toHaveClass("item active-left");
+  expect(carouselItem2).toHaveClass("item item-left");
+
+  fireEvent.click(button);
+
+  expect(carouselItem2).toHaveClass("item animationActive");
 });
