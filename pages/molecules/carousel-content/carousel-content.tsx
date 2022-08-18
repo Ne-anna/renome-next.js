@@ -18,7 +18,7 @@ export default function CarouselContent(props: CarouselData) {
                 : style.animationActive
             } `}
             key={index}
-            data-testid={`carousel-item-${index}`}
+            role={`carousel-item-${index}`}
           >
             <div
               className={`${style.text} ${

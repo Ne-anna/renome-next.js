@@ -38,9 +38,9 @@ it("Let's see if the function is called when 'next' button is pressed", async ()
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
-  const carouselItem = await screen.findByTestId("carousel-item-0");
-  const carouselItem1 = await screen.findByTestId("carousel-item-1");
-  const carouselItem2 = await screen.findByTestId("carousel-item-2");
+  const carouselItem = await screen.findByRole("carousel-item-0");
+  const carouselItem1 = await screen.findByRole("carousel-item-1");
+  const carouselItem2 = await screen.findByRole("carousel-item-2");
 
   const button = screen.getByRole("button", { name: "next button" });
   fireEvent.click(button);
@@ -65,9 +65,9 @@ it("Let's see if the function is called when 'previous' button is pressed", asyn
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
-  const carouselItem = await screen.findByTestId("carousel-item-0");
-  const carouselItem1 = await screen.findByTestId("carousel-item-1");
-  const carouselItem2 = await screen.findByTestId("carousel-item-2");
+  const carouselItem = await screen.findByRole("carousel-item-0");
+  const carouselItem1 = await screen.findByRole("carousel-item-1");
+  const carouselItem2 = await screen.findByRole("carousel-item-2");
 
   const button = screen.getByRole("button", { name: "previous button" });
   fireEvent.click(button);
