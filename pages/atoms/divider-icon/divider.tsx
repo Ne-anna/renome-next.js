@@ -3,7 +3,7 @@ import { NavigationData } from "../../../data";
 
 export default function Divider(props: NavigationData) {
   return (
-    <div data-testid="divider">
+    <div role="divider">
       {props.dividerPath && (
         <Image
           src={props.dividerPath}
