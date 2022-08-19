@@ -7,7 +7,7 @@ export default function SubMenuBack({
   buttonBackAltTag,
 }: BackButtonTitle) {
   return (
-    <button className={style.subNavigationButton}>
+    <button className={style.subNavigationButton} aria-label="back button">
       <Image
         src={buttonBackPath}
         alt={buttonBackAltTag}
