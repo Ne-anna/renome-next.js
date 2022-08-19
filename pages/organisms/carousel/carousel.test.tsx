@@ -1,9 +1,7 @@
-import { fireEvent, getByRole, render, screen } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import { CarouselButton, CarouselData, CarouselItem } from "../../../data";
 import Carousel from "./carousel";
-import CarouselPreviousButton from "../../atoms/carousel-previous-button/carousel-previous-button";
-import CarouselNextButton from "../../atoms/carousel-next-button/carousel-next-button";
 
 const carouselItem: CarouselItem = {
   title: "Made with love",
@@ -18,7 +16,7 @@ interface CarouselProps {
 }
 
 const carouselData: CarouselData = {
-  carousel: [carouselItem],
+  carousel: [carouselItem, carouselItem, carouselItem],
 };
 
 const carouselButtonData: CarouselButton = {
@@ -26,61 +24,63 @@ const carouselButtonData: CarouselButton = {
   altTagNext: "arrow left",
   carouselButtonPrevious: "/assets/icons/icon-name.svg",
   altTagPrevious: "arrow right",
-  // loadPreviousSlide(): void {},
-  // loadNextSlide(): void {},
 };
+
 const carouselProps: CarouselProps = {
   carouselData: carouselData,
   carouselButtonData: carouselButtonData,
 };
 
-it("Let's check carousel title, sub-title and image altTag", () => {
+it("Let's see if the function is called when 'next' button is pressed", async () => {
   render(
     <Carousel
       carouselData={carouselProps.carouselData}
       carouselButtonData={carouselProps.carouselButtonData}
     />
   );
-  carouselData.carousel.forEach((carousel) => {
-    const title = screen.getByText(carousel.title);
-    const subTitle = screen.getByText(carousel.subTitle);
-    const imageAltTag = screen.getByAltText(carousel.altTag);
-    expect(subTitle).toBeInTheDocument();
-    expect(title).toBeInTheDocument();
-    expect(imageAltTag).toBeInTheDocument();
-  });
-});
+  const carouselItem = await screen.findByRole("carousel-item-0");
+  const carouselItem1 = await screen.findByRole("carousel-item-1");
+  const carouselItem2 = await screen.findByRole("carousel-item-2");
 
-//better to test buttons from parent compoent then create seperate test file in child component
-
-it("Test 'next' button", () => {
-  const { getByRole } = render(<CarouselNextButton />);
-  const button = screen.getByRole("button", { name: "next button" });
-  expect(button).toBeInTheDocument();
-});
-
-it("Test 'previous' button", () => {
-  const { getByRole } = render(<CarouselPreviousButton />);
-  const button = screen.getByRole("button", { name: "previous button" });
-  expect(button).toBeInTheDocument();
-});
-
-it("Is 'previous' button clicked?", () => {
-  const clickPrevious = jest.fn();
-  const { getByRole } = render(
-    <CarouselPreviousButton loadPreviousSlide={clickPrevious} />
-  );
-  const button = screen.getByRole("button", { name: "previous button" });
-  fireEvent.click(button);
-  expect(clickPrevious).toHaveBeenCalledTimes(1);
-});
-
-it("Is 'next' button clicked?", () => {
-  const clickNext = jest.fn();
-  const { getByRole } = render(
-    <CarouselNextButton loadNextSlide={clickNext} />
-  );
   const button = screen.getByRole("button", { name: "next button" });
   fireEvent.click(button);
-  expect(clickNext).toHaveBeenCalledTimes(1);
+
+  expect(carouselItem1).toHaveClass("item active-right");
+  expect(carouselItem).toHaveClass("item-right");
+
+  fireEvent.click(button);
+
+  expect(carouselItem2).toHaveClass("item active-right");
+  expect(carouselItem1).toHaveClass("item item-right");
+
+  fireEvent.click(button);
+
+  expect(carouselItem2).toHaveClass("item item-right");
+});
+
+it("Let's see if the function is called when 'previous' button is pressed", async () => {
+  render(
+    <Carousel
+      carouselData={carouselProps.carouselData}
+      carouselButtonData={carouselProps.carouselButtonData}
+    />
+  );
+  const carouselItem = await screen.findByRole("carousel-item-0");
+  const carouselItem1 = await screen.findByRole("carousel-item-1");
+  const carouselItem2 = await screen.findByRole("carousel-item-2");
+
+  const button = screen.getByRole("button", { name: "previous button" });
+  fireEvent.click(button);
+
+  expect(carouselItem1).toHaveClass("item animationActive");
+  expect(carouselItem).toHaveClass("item item-left");
+
+  fireEvent.click(button);
+
+  expect(carouselItem1).toHaveClass("item active-left");
+  expect(carouselItem2).toHaveClass("item item-left");
+
+  fireEvent.click(button);
+
+  expect(carouselItem2).toHaveClass("item animationActive");
 });
