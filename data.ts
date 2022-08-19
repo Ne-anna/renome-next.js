@@ -7,12 +7,13 @@ export interface CartItem {
 }
 
 export interface NavigationData {
-  logo: string;
-  cartPath: string;
-  altTagCart: string;
-  count: string;
-  dividerPath: string;
-  altTagDivider: string;
+  logo?: string;
+  cartPath?: string;
+  altTagCart?: string;
+  count?: string;
+  dividerPath?: string;
+  altTagDivider?: string;
+  toggleCart?(): void;
 }
 
 export interface MenuData {
@@ -37,7 +38,7 @@ export interface SubMenu {
   url: string;
 }
 
-export interface backButtonData {
+export interface BackButtonData {
   buttonData: BackButtonTitle;
 }
 
