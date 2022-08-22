@@ -1,6 +1,5 @@
 import { BackButtonData, Cart, MenuData, NavigationData } from "../../../data";
 import style from "../navigation/navigation.module.scss";
-import Image from "next/image";
 import Hamburger from "../../atoms/hamburger-button/hamburger";
 import CartDropDown from "../../molecules/cart-drop-down/cart-drop-down";
 import { useEffect, useRef, useState } from "react";
@@ -98,14 +97,10 @@ export default function Navigation(props: NavigationDataProps) {
         >
           <Hamburger />
         </div>
-        <div role="cart">
-          {isCartOpen && <CartDropDown cart={props.cartData.cart} />}
-        </div>
-        <div role="menu">
-          {isMainMenuOpen && (
-            <Menu menu={props.menuData.menu} openSubMenu={openSubMenu} />
-          )}
-        </div>
+        {isCartOpen && <CartDropDown cart={props.cartData.cart} />}
+        {isMainMenuOpen && (
+          <Menu menu={props.menuData.menu} openSubMenu={openSubMenu} />
+        )}
         {isSubMenuOpen && (
           <SubMenu
             menuData={{
