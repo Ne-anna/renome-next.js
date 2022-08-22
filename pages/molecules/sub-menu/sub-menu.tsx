@@ -13,6 +13,7 @@ export default function SubMenu(props: SubMenuProps) {
       <div
         className={style.subMenuItemBack}
         onClick={props.menuData.closeSubMenu}
+        role="section back"
       >
         <SubMenuBack
           buttonBackPath={props.backButton.buttonBackPath}

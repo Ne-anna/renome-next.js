@@ -11,6 +11,7 @@ export default function Menu(props: MenuData) {
           return (
             <li
               key={index}
+              role="covering"
               className={`${style.item} ${
                 post.isSubMenu
                   ? style.itemFeatures
@@ -28,7 +29,12 @@ export default function Menu(props: MenuData) {
                   />
                 </>
               ) : post.title === "Features" ? (
-                <div className={style.itemFeatures} onClick={props.openSubMenu}>
+                <div
+                  className={style.itemFeatures}
+                  role="features"
+                  aria-label="test"
+                  onClick={props.openSubMenu}
+                >
                   <a className={style.link} href={post.url}>
                     {post.title}
                   </a>
