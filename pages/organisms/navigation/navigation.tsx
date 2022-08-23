@@ -75,16 +75,20 @@ export default function Navigation(props: NavigationProps) {
       <div className={style.navigationRight} ref={Ref}>
         <div>
           <CartButton
-            cartPath={props.navigationData.cartPath}
-            altTagCart={props.navigationData.altTagCart}
-            toggleCart={toggleCart}
+            cartData={{
+              cartPath: props.navigationData.cartPath,
+              altTagCart: props.navigationData.altTagCart,
+              toggleCart: toggleCart,
+            }}
           />
         </div>
         <p className={style.navigationCount}>{props.navigationData.count}</p>
         <div className={style.navigationDivide}>
           <Divider
-            dividerPath={props.navigationData.dividerPath}
-            altTagDivider={props.navigationData.altTagDivider}
+            dividerData={{
+              altTagDivider: props.navigationData.altTagDivider,
+              dividerPath: props.navigationData.dividerPath,
+            }}
           />
         </div>
         <div
