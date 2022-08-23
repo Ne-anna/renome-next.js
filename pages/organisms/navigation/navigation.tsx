@@ -8,7 +8,7 @@ import SubMenu from "../../molecules/sub-menu/sub-menu";
 import CartButton from "../../atoms/cart-button/cart-button";
 import Divider from "../../atoms/divider-icon/divider";
 
-interface NavigationDataProps {
+interface NavigationProps {
   navigationData: NavigationData;
   cartData: Cart;
   menuData: MenuData;
@@ -16,7 +16,7 @@ interface NavigationDataProps {
   toggleCart?(): void;
 }
 
-export default function Navigation(props: NavigationDataProps) {
+export default function Navigation(props: NavigationProps) {
   const [isCartOpen, setCartOpen] = useState<boolean>(false);
   const [isMainMenuOpen, setMainMenuOpen] = useState<boolean>(false);
   const [isSubMenuOpen, setSubMenuOpen] = useState<boolean>(false);
