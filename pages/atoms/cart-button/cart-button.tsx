@@ -1,18 +1,21 @@
 import Image from "next/image";
-import { NavigationData } from "../../../data";
+import { CartPath } from "../../../data";
 import style from "../cart-button/cart-button.module.scss";
 
-export default function CartButton(props: NavigationData) {
+interface CartProps {
+  cartData: CartPath;
+}
+export default function CartButton(props: CartProps) {
   return (
     <button
       className={style.cart}
-      onClick={props.toggleCart}
+      onClick={props.cartData.toggleCart}
       aria-label="cart button"
     >
-      {props.cartPath && (
+      {props.cartData.cartPath && (
         <Image
-          src={props.cartPath}
-          alt={props.altTagCart}
+          src={props.cartData.cartPath}
+          alt={props.cartData.altTagCart}
           width={18}
           height={25}
         />
