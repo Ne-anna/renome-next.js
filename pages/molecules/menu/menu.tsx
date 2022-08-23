@@ -31,7 +31,6 @@ export default function Menu(props: MenuData) {
               ) : post.title === "Features" ? (
                 <div
                   className={style.itemFeatures}
-                  role="features"
                   aria-label="features button"
                   onClick={props.openSubMenu}
                 >

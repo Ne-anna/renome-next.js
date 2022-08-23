@@ -59,7 +59,7 @@ it("Click on menu 'features' to open sub-Menu", async () => {
     <SubMenu menuData={menuData} backButton={backButton} />
   );
 
-  const item = await screen.getByRole("features", { name: "features button" });
+  const item = await screen.getByText("Features");
   fireEvent.click(item);
 
   expect(subMenu.baseElement).toBeInTheDocument();
