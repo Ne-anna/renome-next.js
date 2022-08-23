@@ -5,15 +5,24 @@ export interface Cart {
 export interface CartItem {
   item: string;
 }
+export interface Divider {
+  dividerPath: string;
+  altTagDivider: string;
+}
 
+export interface CartPath {
+  cartPath: string;
+  altTagCart: string;
+  toggleCart(): void;
+}
 export interface NavigationData {
-  logo?: string;
-  cartPath?: string;
-  altTagCart?: string;
-  count?: string;
-  dividerPath?: string;
-  altTagDivider?: string;
-  toggleCart?(): void;
+  logo: string;
+  cartPath: string;
+  altTagCart: string;
+  count: string;
+  dividerPath: string;
+  altTagDivider: string;
+  toggleCart(): void;
 }
 
 export interface MenuData {
@@ -130,6 +139,7 @@ export const defaultData: RootObject = {
     count: "",
     dividerPath: "",
     altTagDivider: "",
+    toggleCart(): void {},
   },
   menu: [],
   backButtonTitle: {
