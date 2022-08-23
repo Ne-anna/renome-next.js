@@ -32,7 +32,7 @@ export default function Menu(props: MenuData) {
                 <div
                   className={style.itemFeatures}
                   role="features"
-                  aria-label="test"
+                  aria-label="features button"
                   onClick={props.openSubMenu}
                 >
                   <a className={style.link} href={post.url}>
