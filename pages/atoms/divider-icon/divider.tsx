@@ -1,13 +1,16 @@
 import Image from "next/image";
-import { NavigationData } from "../../../data";
+import { Divider as DividerData } from "../../../data";
 
-export default function Divider(props: NavigationData) {
+interface DividerProps {
+  dividerData: DividerData;
+}
+export default function Divider(props: DividerProps) {
   return (
-    <div role="divider">
-      {props.dividerPath && (
+    <div>
+      {props.dividerData && (
         <Image
-          src={props.dividerPath}
-          alt={props.altTagDivider}
+          src={props.dividerData.dividerPath}
+          alt={props.dividerData.altTagDivider}
           width={25}
           height={25}
         />
