@@ -5,7 +5,7 @@ import style from "../cart-button/cart-button.module.scss";
 export default function CartButton(props: NavigationData) {
   return (
     <button
-      className={style.Cart}
+      className={style.cart}
       onClick={props.toggleCart}
       aria-label="cart button"
     >
