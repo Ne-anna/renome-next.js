@@ -21,7 +21,6 @@ const navigtionData: NavigationData = {
   count: "2",
   dividerPath: "/assets/icons/another-test/svg",
   altTagDivider: "altTag for divider",
-  toggleCart(): void {},
 };
 
 const cartItem: CartItem = {
