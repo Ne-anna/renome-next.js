@@ -22,7 +22,6 @@ export interface NavigationData {
   count: string;
   dividerPath: string;
   altTagDivider: string;
-  toggleCart(): void;
 }
 
 export interface MenuData {
@@ -139,7 +138,6 @@ export const defaultData: RootObject = {
     count: "",
     dividerPath: "",
     altTagDivider: "",
-    toggleCart(): void {},
   },
   menu: [],
   backButtonTitle: {
