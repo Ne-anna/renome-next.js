@@ -1,6 +1,6 @@
 import Footer from "./organisms/footer/footer";
 import {
-  backButtonData,
+  BackButtonData,
   Cart,
   FooterData,
   MenuData,
@@ -12,7 +12,7 @@ interface LayoutDataProps {
   navigationData: NavigationData;
   cartData: Cart;
   menuData: MenuData;
-  backButtonData: backButtonData;
+  backButtonData: BackButtonData;
   footerDataProps: FooterData;
   children: React.ReactNode;
 }
