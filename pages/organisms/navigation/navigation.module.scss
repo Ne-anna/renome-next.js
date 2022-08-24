@@ -26,10 +26,6 @@
   gap: 5px;
 }
 
-.navigationCart {
-  width: 18px;
-}
-
 .navigationCount {
   padding-top: 3px;
   margin-left: 5px;
@@ -77,3 +73,7 @@
     transform: translateY(-8px) rotate(-45deg);
   }
 }
+
+// div[role="menu"] {
+//   padding: 0;
+// }

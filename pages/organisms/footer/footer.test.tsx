@@ -71,6 +71,5 @@ it("Time to render footer icons", () => {
   footerData.footerIcons.forEach((footerIcons) => {
     const footerIconAltTag = screen.getByAltText(footerIcons.altTag);
     expect(footerIconAltTag).toBeInTheDocument();
-    // expect(footerByAltTag).toHaveTextContent("icon");
   });
 });

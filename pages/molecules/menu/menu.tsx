@@ -11,6 +11,7 @@ export default function Menu(props: MenuData) {
           return (
             <li
               key={index}
+              role="covering"
               className={`${style.item} ${
                 post.isSubMenu
                   ? style.itemFeatures

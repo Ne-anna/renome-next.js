@@ -4,7 +4,7 @@ import { MenuItem } from "../../../data";
 
 export default function FeaturesNext(props: MenuItem) {
   return (
-    <button className={style.button}>
+    <button className={style.button} aria-label="features next button">
       {props.buttonNextPath && (
         <Image
           src={props.buttonNextPath}

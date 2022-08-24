@@ -1,21 +1,22 @@
-import { backButtonData, Cart, MenuData, NavigationData } from "../../../data";
+import { BackButtonData, Cart, MenuData, NavigationData } from "../../../data";
 import style from "../navigation/navigation.module.scss";
-import Image from "next/image";
 import Hamburger from "../../atoms/hamburger-button/hamburger";
 import CartDropDown from "../../molecules/cart-drop-down/cart-drop-down";
 import { useEffect, useRef, useState } from "react";
 import Menu from "../../molecules/menu/menu";
 import SubMenu from "../../molecules/sub-menu/sub-menu";
-import { type } from "os";
+import CartButton from "../../atoms/cart-button/cart-button";
+import Divider from "../../atoms/divider-icon/divider";
 
-interface NavigationDataProps {
+interface NavigationProps {
   navigationData: NavigationData;
   cartData: Cart;
   menuData: MenuData;
-  backButtonData: backButtonData;
+  backButtonData: BackButtonData;
+  toggleCart?(): void;
 }
 
-export default function Navigation(props: NavigationDataProps) {
+export default function Navigation(props: NavigationProps) {
   const [isCartOpen, setCartOpen] = useState<boolean>(false);
   const [isMainMenuOpen, setMainMenuOpen] = useState<boolean>(false);
   const [isSubMenuOpen, setSubMenuOpen] = useState<boolean>(false);
@@ -72,21 +73,22 @@ export default function Navigation(props: NavigationDataProps) {
     <div className={style.nav}>
       <h2 className={style.navigationLeft}>{props.navigationData.logo}</h2>
       <div className={style.navigationRight} ref={Ref}>
-        <div className={style.navigationCart} onClick={toggleCart}>
-          <Image
-            src={props.navigationData.cartPath}
-            alt={props.navigationData.altTagCart}
-            width={18}
-            height={25}
+        <div>
+          <CartButton
+            cartData={{
+              cartPath: props.navigationData.cartPath,
+              altTagCart: props.navigationData.altTagCart,
+              toggleCart: toggleCart,
+            }}
           />
         </div>
         <p className={style.navigationCount}>{props.navigationData.count}</p>
         <div className={style.navigationDivide}>
-          <Image
-            src={props.navigationData.dividerPath}
-            alt={props.navigationData.altTagDivider}
-            width={25}
-            height={25}
+          <Divider
+            dividerData={{
+              altTagDivider: props.navigationData.altTagDivider,
+              dividerPath: props.navigationData.dividerPath,
+            }}
           />
         </div>
         <div

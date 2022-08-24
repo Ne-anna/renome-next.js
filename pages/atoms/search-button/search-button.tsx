@@ -4,7 +4,7 @@ import style from "../search-button/search-button.module.scss";
 
 export default function Search(props: MenuItem) {
   return (
-    <button className={style.button}>
+    <button className={style.button} aria-label="search">
       {props.buttonSearchPath && (
         <Image
           src={props.buttonSearchPath}
