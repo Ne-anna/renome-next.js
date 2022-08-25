@@ -1,4 +1,4 @@
-import Footer from "./organisms/footer/footer";
+import Footer from "../components/organisms/footer/footer";
 import {
   backButtonData,
   Cart,
@@ -6,7 +6,7 @@ import {
   MenuData,
   NavigationData,
 } from "../data";
-import Navigation from "./organisms/navigation/navigation";
+import Navigation from "../components/organisms/navigation/navigation";
 
 interface LayoutDataProps {
   navigationData: NavigationData;

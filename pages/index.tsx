@@ -1,11 +1,11 @@
 import { GetStaticProps } from "next";
 import Head from "next/head";
 import { getSortedPostsData } from "../lib/fetchFunction";
-import About from "./organisms/about/about";
-import Layout from "../pages/layout";
+import About from "../components/organisms/about/about";
+import Layout from "../components/layout";
 import { RootObject } from "../data";
-import Gallery from "./organisms/gallery/gallery";
-import Carousel from "./organisms/carousel/carousel";
+import Gallery from "../components/organisms/gallery/gallery";
+import Carousel from "../components/organisms/carousel/carousel";
 
 interface allDataProps {
   allData: RootObject;
